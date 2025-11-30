@@ -178,4 +178,8 @@ public class Main {
     }
 }
 
-// iniciar projeto : javac src/main/java/com/trabalho/*.java -d out && java -cp out com.trabalho.Main
+// iniciar projeto : javac src/main/java/com/trabalho/*.java -d out && java -cp out com.trabalho.Main ou
+// java -cp src/main/java com.trabalho.Main
+// "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java -d out && "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main
+
+
