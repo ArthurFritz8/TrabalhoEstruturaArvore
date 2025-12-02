@@ -75,6 +75,7 @@ O projeto está organizado da seguinte forma:
         *   Executar os métodos de percurso e remoção para ABB e AVL em conjuntos de dados de 100 elementos.
         *   Executar cada teste múltiplas vezes (5 vezes) e calcular a média dos tempos.
         *   Imprimir os resultados formatados no console.
+        *   **Exportar os resultados para um arquivo CSV** chamado `resultados_desempenho.csv`, facilitando a análise e a criação do relatório técnico.
     *   `No.java`: Uma classe auxiliar que define a estrutura de um nó para as árvores (ABB e AVL). Cada nó contém um `valor` inteiro, referências para os nós `esquerda` e `direita`, e um atributo `altura` (usado especificamente pela Árvore AVL para cálculo de balanceamento).
     *   `Ordenacao.java`: Contém as implementações dos algoritmos de ordenação:
         *   `bubbleSort(int[] arr)`: Implementação do algoritmo Bubble Sort.
@@ -102,7 +103,7 @@ Para compilar e executar este projeto, siga os passos abaixo:
     "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java -d out
     ```
 
-4.  **Execute a aplicação** usando o `java`. O comando irá rodar a classe `Main`, que iniciará a análise de desempenho e exibirá os resultados detalhados no terminal. Certifique-se de usar o caminho completo para o `java.exe` da sua instalação do JDK 21:
+4.  **Execute a aplicação** usando o `java`. O comando irá rodar a classe `Main`, que iniciará a análise de desempenho e exibirá os resultados detalhados no terminal. Além disso, um arquivo `resultados_desempenho.csv` será gerado na raiz do projeto com todos os dados coletados. Certifique-se de usar o caminho completo para o `java.exe` da sua instalação do JDK 21:
 
     ```bash
     "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main

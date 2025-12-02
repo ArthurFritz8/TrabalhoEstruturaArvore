@@ -1,5 +1,7 @@
 package com.trabalho;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,10 +12,14 @@ public class Main {
     private static final int[] TAMANHOS = {100, 1000, 10000};
     private static final String[] ORDENS = {"Ordenada", "Inversamente Ordenada", "Aleatoria"};
     private static final int NUM_EXECUCOES = 5;
+    private static final List<String[]> resultados = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Iniciando analise de desempenho de estruturas de dados em Java.");
         System.out.println("----------------------------------------------------------------");
+
+        // Adicionar cabeçalho CSV
+        resultados.add(new String[]{"Estrutura", "Tamanho", "Ordem", "Operacao", "TempoMedio_ms"});
 
         for (int tamanho : TAMANHOS) {
             for (String ordem : ORDENS) {
@@ -23,17 +29,20 @@ public class Main {
                 List<Integer> dados = gerarDados(tamanho, ordem);
 
                 // Teste Vetor
-                testarVetor(tamanho, dados);
+                testarVetor(tamanho, ordem, dados);
 
                 // Teste Arvore Binaria de Busca
-                testarArvoreBinariaBusca(tamanho, dados);
+                testarArvoreBinariaBusca(tamanho, ordem, dados);
 
                 // Teste Arvore AVL
-                testarArvoreAVL(tamanho, dados);
+                testarArvoreAVL(tamanho, ordem, dados);
 
                 System.out.println("----------------------------------------------------------------");
             }
         }
+
+        exportarResultadosParaCSV("resultados_desempenho.csv");
+        System.out.println("Analise de desempenho concluida. Resultados exportados para resultados_desempenho.csv");
     }
 
     private static List<Integer> gerarDados(int tamanho, String ordem) {
@@ -50,7 +59,7 @@ public class Main {
         return dados;
     }
 
-    private static void testarVetor(int tamanho, List<Integer> dados) {
+    private static void testarVetor(int tamanho, String ordem, List<Integer> dados) {
         System.out.println("Testando Vetor...");
         long tempoInsercaoTotal = 0;
         long tempoBuscaSequencialTotal = 0;
@@ -134,12 +143,32 @@ public class Main {
         System.out.printf("Tempo medio de busca sequencial (Vetor): %.3f ms%n", (double) tempoBuscaSequencialTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de busca binaria (Vetor): %.3f ms%n", (double) tempoBuscaBinariaTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de Bubble Sort (Vetor): %.3f ms%n", (double) tempoBubbleSortTotal / NUM_EXECUCOES / 1_000_000.0);
-        System.out.printf("Tempo medio de Insertion Sort (Vetor): %.3f ms%n", (double) tempoInsertionSortTotal / NUM_EXECUCOES / 1_000_000.0);
-        System.out.printf("Tempo medio de Merge Sort (Vetor): %.3f ms%n", (double) tempoMergeSortTotal / NUM_EXECUCOES / 1_000_000.0);
-        System.out.printf("Tempo medio de Quick Sort (Vetor): %.3f ms%n", (double) tempoQuickSortTotal / NUM_EXECUCOES / 1_000_000.0);
+        double tempoInsercaoVetor = (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoBuscaSequencialVetor = (double) tempoBuscaSequencialTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoBuscaBinariaVetor = (double) tempoBuscaBinariaTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoBubbleSortVetor = (double) tempoBubbleSortTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoInsertionSortVetor = (double) tempoInsertionSortTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoMergeSortVetor = (double) tempoMergeSortTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoQuickSortVetor = (double) tempoQuickSortTotal / NUM_EXECUCOES / 1_000_000.0;
+
+        System.out.printf("Tempo medio de insercao (Vetor): %.3f ms%n", tempoInsercaoVetor);
+        System.out.printf("Tempo medio de busca sequencial (Vetor): %.3f ms%n", tempoBuscaSequencialVetor);
+        System.out.printf("Tempo medio de busca binaria (Vetor): %.3f ms%n", tempoBuscaBinariaVetor);
+        System.out.printf("Tempo medio de Bubble Sort (Vetor): %.3f ms%n", tempoBubbleSortVetor);
+        System.out.printf("Tempo medio de Insertion Sort (Vetor): %.3f ms%n", tempoInsertionSortVetor);
+        System.out.printf("Tempo medio de Merge Sort (Vetor): %.3f ms%n", tempoMergeSortVetor);
+        System.out.printf("Tempo medio de Quick Sort (Vetor): %.3f ms%n", tempoQuickSortVetor);
+
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Insercao", String.format("%.3f", tempoInsercaoVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Busca Sequencial", String.format("%.3f", tempoBuscaSequencialVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Busca Binaria", String.format("%.3f", tempoBuscaBinariaVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Bubble Sort", String.format("%.3f", tempoBubbleSortVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Insertion Sort", String.format("%.3f", tempoInsertionSortVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Merge Sort", String.format("%.3f", tempoMergeSortVetor)});
+        resultados.add(new String[]{"Vetor", String.valueOf(tamanho), ordem, "Quick Sort", String.format("%.3f", tempoQuickSortVetor)});
     }
 
-    private static void testarArvoreBinariaBusca(int tamanho, List<Integer> dados) {
+    private static void testarArvoreBinariaBusca(int tamanho, String ordem, List<Integer> dados) {
         System.out.println("Testando Arvore Binaria de Busca...");
         long tempoInsercaoTotal = 0;
         long tempoBuscaTotal = 0;
@@ -165,8 +194,14 @@ public class Main {
             fim = System.nanoTime();
             tempoBuscaTotal += (fim - inicio);
         }
-        System.out.printf("Tempo medio de insercao (ABB): %.3f ms%n", (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0);
-        System.out.printf("Tempo medio de busca (ABB): %.3f ms%n", (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0);
+        double tempoInsercaoABB = (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoBuscaABB = (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0;
+
+        System.out.printf("Tempo medio de insercao (ABB): %.3f ms%n", tempoInsercaoABB);
+        System.out.printf("Tempo medio de busca (ABB): %.3f ms%n", tempoBuscaABB);
+
+        resultados.add(new String[]{"Arvore Binaria de Busca", String.valueOf(tamanho), ordem, "Insercao", String.format("%.3f", tempoInsercaoABB)});
+        resultados.add(new String[]{"Arvore Binaria de Busca", String.valueOf(tamanho), ordem, "Busca", String.format("%.3f", tempoBuscaABB)});
         
         if (tamanho == 100) { // Apenas para tamanhos pequenos para não poluir a saída
             ArvoreBinariaBusca abbParaPercurso = new ArvoreBinariaBusca();
@@ -186,7 +221,7 @@ public class Main {
         }
     }
 
-    private static void testarArvoreAVL(int tamanho, List<Integer> dados) {
+    private static void testarArvoreAVL(int tamanho, String ordem, List<Integer> dados) {
         System.out.println("Testando Arvore AVL...");
         long tempoInsercaoTotal = 0;
         long tempoBuscaTotal = 0;
@@ -212,8 +247,14 @@ public class Main {
             fim = System.nanoTime();
             tempoBuscaTotal += (fim - inicio);
         }
-        System.out.printf("Tempo medio de insercao (AVL): %.3f ms%n", (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0);
-        System.out.printf("Tempo medio de busca (AVL): %.3f ms%n", (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0);
+        double tempoInsercaoAVL = (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0;
+        double tempoBuscaAVL = (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0;
+
+        System.out.printf("Tempo medio de insercao (AVL): %.3f ms%n", tempoInsercaoAVL);
+        System.out.printf("Tempo medio de busca (AVL): %.3f ms%n", tempoBuscaAVL);
+
+        resultados.add(new String[]{"Arvore AVL", String.valueOf(tamanho), ordem, "Insercao", String.format("%.3f", tempoInsercaoAVL)});
+        resultados.add(new String[]{"Arvore AVL", String.valueOf(tamanho), ordem, "Busca", String.format("%.3f", tempoBuscaAVL)});
 
         if (tamanho == 100) { // Apenas para tamanhos pequenos para não poluir a saída
             ArvoreAVL avlParaPercurso = new ArvoreAVL();
@@ -232,8 +273,16 @@ public class Main {
             avlParaPercurso.imprimirEmOrdem();
         }
     }
-}
 
-// iniciar projeto : javac src/main/java/com/trabalho/*.java -d out && java -cp out com.trabalho.Main ou
-// java -cp src/main/java com.trabalho.Main
-// "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java -d out && "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main
+    private static void exportarResultadosParaCSV(String nomeArquivo) {
+        try (FileWriter writer = new FileWriter(nomeArquivo)) {
+            for (String[] linha : resultados) {
+                writer.append(String.join(",", linha));
+                writer.append("\n");
+            }
+            writer.flush();
+        } catch (IOException e) {
+            System.err.println("Erro ao exportar resultados para CSV: " + e.getMessage());
+        }
+    }
+}
