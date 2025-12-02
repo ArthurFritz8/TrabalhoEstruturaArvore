@@ -2,7 +2,7 @@
 
 ## Objetivo do Projeto
 
-Este trabalho tem como objetivo principal comparar o desempenho de diferentes estruturas de dados em Java: **Vetores**, **Árvores Binárias de Busca (ABB)** e **Árvores AVL**. A análise foca nas operações de inserção e busca, avaliando como o desempenho varia com base no tamanho dos conjuntos de dados e nas diferentes ordens de inserção (ordenada, inversamente ordenada e aleatória). Além disso, para os vetores, são comparados dois algoritmos de ordenação distintos: Bubble Sort (simples) e Merge Sort (avançado), juntamente com métodos de busca sequencial e binária.
+Este trabalho tem como objetivo principal comparar o desempenho de diferentes estruturas de dados em Java: **Vetores**, **Árvores Binárias de Busca (ABB)** e **Árvores AVL**. A análise foca nas operações de inserção e busca, avaliando como o desempenho varia com base no tamanho dos conjuntos de dados e nas diferentes ordens de inserção (ordenada, inversamente ordenada e aleatória). Além disso, para os vetores, são comparados quatro algoritmos de ordenação distintos: Bubble Sort (simples), Insertion Sort (simples), Merge Sort (avançado) e Quick Sort (avançado), juntamente com métodos de busca sequencial e binária.
 
 ## Requisitos de Implementação
 
@@ -15,7 +15,9 @@ Todas as estruturas de dados e algoritmos foram implementados do zero, sem o uso
 
 2.  **Algoritmos de Ordenação para Vetores:**
     *   **Bubble Sort:** Um algoritmo de ordenação simples.
+    *   **Insertion Sort:** Outro algoritmo de ordenação simples.
     *   **Merge Sort:** Um algoritmo de ordenação avançado.
+    *   **Quick Sort:** Outro algoritmo de ordenação avançado.
 
 3.  **Métodos de Busca para Vetores:**
     *   **Busca Sequencial:** Funciona para qualquer vetor.
@@ -36,7 +38,7 @@ A análise de desempenho segue uma metodologia rigorosa para garantir resultados
     *   Após a população de cada estrutura, são medidos os tempos de busca para os seguintes elementos: o primeiro inserido, o último inserido, o elemento na posição do meio, três elementos aleatórios que existem na estrutura e um elemento que não existe na estrutura.
 
 4.  **Medição do Tempo de Ordenação (Apenas para Vetores):**
-    *   Para os vetores populados, os algoritmos Bubble Sort e Merge Sort são aplicados, e o tempo que cada um leva para ordenar os vetores é medido e registrado.
+    *   Para os vetores populados, os algoritmos Bubble Sort, Insertion Sort, Merge Sort e Quick Sort são aplicados, e o tempo que cada um leva para ordenar os vetores é medido e registrado.
 
 **Importante:** Cada teste (inserção, busca e ordenação) é executado no mínimo 5 vezes. O tempo registrado para análise é a média dessas 5 execuções para garantir maior precisão.
 
@@ -69,13 +71,15 @@ O projeto está organizado da seguinte forma:
         *   Definir os tamanhos dos conjuntos de dados (100, 1000, 10000) e as ordens de inserção (Ordenada, Inversamente Ordenada, Aleatória).
         *   Gerar os dados para cada cenário.
         *   Instanciar e testar cada estrutura de dados (Vetor, ABB, AVL).
-        *   Medir os tempos de inserção, busca e ordenação (para Vetores).
+        *   Medir os tempos de inserção, busca e ordenação (para Vetores, incluindo Bubble Sort, Insertion Sort, Merge Sort e Quick Sort).
         *   Executar cada teste múltiplas vezes (5 vezes) e calcular a média dos tempos.
         *   Imprimir os resultados formatados no console.
     *   `No.java`: Uma classe auxiliar que define a estrutura de um nó para as árvores (ABB e AVL). Cada nó contém um `valor` inteiro, referências para os nós `esquerda` e `direita`, e um atributo `altura` (usado especificamente pela Árvore AVL para cálculo de balanceamento).
     *   `Ordenacao.java`: Contém as implementações dos algoritmos de ordenação:
         *   `bubbleSort(int[] arr)`: Implementação do algoritmo Bubble Sort.
+        *   `insertionSort(int[] arr)`: Implementação do algoritmo Insertion Sort.
         *   `mergeSort(int[] arr)`: Implementação do algoritmo Merge Sort, incluindo os métodos auxiliares recursivos e o método `merge`.
+        *   `quickSort(int[] arr)`: Implementação do algoritmo Quick Sort, incluindo os métodos auxiliares recursivos e o método `partition`.
     *   `Vetor.java`: Implementa uma estrutura de vetor dinâmico. Inclui métodos para:
         *   `inserir(int elemento)`: Adiciona um elemento ao vetor, redimensionando-o se necessário.
         *   `buscarSequencial(int elemento)`: Realiza uma busca linear no vetor.

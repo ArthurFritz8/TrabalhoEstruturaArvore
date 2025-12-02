@@ -56,7 +56,9 @@ public class Main {
         long tempoBuscaSequencialTotal = 0;
         long tempoBuscaBinariaTotal = 0;
         long tempoBubbleSortTotal = 0;
+        long tempoInsertionSortTotal = 0;
         long tempoMergeSortTotal = 0;
+        long tempoQuickSortTotal = 0;
 
         for (int k = 0; k < NUM_EXECUCOES; k++) {
             Vetor vetor = new Vetor(tamanho);
@@ -88,6 +90,15 @@ public class Main {
             long fimBubble = System.nanoTime();
             tempoBubbleSortTotal += (fimBubble - inicioBubble);
 
+            Vetor vetorInsertion = new Vetor(tamanho);
+            for (int dado : dados) {
+                vetorInsertion.inserir(dado);
+            }
+            long inicioInsertion = System.nanoTime();
+            new Ordenacao().insertionSort(vetorInsertion.getElementos()); 
+            long fimInsertion = System.nanoTime();
+            tempoInsertionSortTotal += (fimInsertion - inicioInsertion);
+
             Vetor vetorMerge = new Vetor(tamanho);
             for (int dado : dados) {
                 vetorMerge.inserir(dado);
@@ -96,6 +107,15 @@ public class Main {
             new Ordenacao().mergeSort(vetorMerge.getElementos()); 
             long fimMerge = System.nanoTime();
             tempoMergeSortTotal += (fimMerge - inicioMerge);
+
+            Vetor vetorQuick = new Vetor(tamanho);
+            for (int dado : dados) {
+                vetorQuick.inserir(dado);
+            }
+            long inicioQuick = System.nanoTime();
+            new Ordenacao().quickSort(vetorQuick.getElementos()); 
+            long fimQuick = System.nanoTime();
+            tempoQuickSortTotal += (fimQuick - inicioQuick);
 
             vetor.ordenar(); 
             inicio = System.nanoTime();
@@ -114,7 +134,9 @@ public class Main {
         System.out.printf("Tempo medio de busca sequencial (Vetor): %.3f ms%n", (double) tempoBuscaSequencialTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de busca binaria (Vetor): %.3f ms%n", (double) tempoBuscaBinariaTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de Bubble Sort (Vetor): %.3f ms%n", (double) tempoBubbleSortTotal / NUM_EXECUCOES / 1_000_000.0);
+        System.out.printf("Tempo medio de Insertion Sort (Vetor): %.3f ms%n", (double) tempoInsertionSortTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de Merge Sort (Vetor): %.3f ms%n", (double) tempoMergeSortTotal / NUM_EXECUCOES / 1_000_000.0);
+        System.out.printf("Tempo medio de Quick Sort (Vetor): %.3f ms%n", (double) tempoQuickSortTotal / NUM_EXECUCOES / 1_000_000.0);
     }
 
     private static void testarArvoreBinariaBusca(int tamanho, List<Integer> dados) {
@@ -181,5 +203,3 @@ public class Main {
 // iniciar projeto : javac src/main/java/com/trabalho/*.java -d out && java -cp out com.trabalho.Main ou
 // java -cp src/main/java com.trabalho.Main
 // "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java -d out && "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main
-
-
