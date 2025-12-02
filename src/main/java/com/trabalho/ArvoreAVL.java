@@ -110,4 +110,46 @@ public class ArvoreAVL {
             return buscar(no.direita, valor);
         }
     }
+
+    public void imprimirEmOrdem() {
+        System.out.print("In-Ordem (AVL): ");
+        imprimirEmOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirEmOrdemRecursivo(No no) {
+        if (no != null) {
+            imprimirEmOrdemRecursivo(no.esquerda);
+            System.out.print(no.valor + " ");
+            imprimirEmOrdemRecursivo(no.direita);
+        }
+    }
+
+    public void imprimirPreOrdem() {
+        System.out.print("Pré-Ordem (AVL): ");
+        imprimirPreOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirPreOrdemRecursivo(No no) {
+        if (no != null) {
+            System.out.print(no.valor + " ");
+            imprimirPreOrdemRecursivo(no.esquerda);
+            imprimirPreOrdemRecursivo(no.direita);
+        }
+    }
+
+    public void imprimirPosOrdem() {
+        System.out.print("Pós-Ordem (AVL): ");
+        imprimirPosOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirPosOrdemRecursivo(No no) {
+        if (no != null) {
+            imprimirPosOrdemRecursivo(no.esquerda);
+            imprimirPosOrdemRecursivo(no.direita);
+            System.out.print(no.valor + " ");
+        }
+    }
 }

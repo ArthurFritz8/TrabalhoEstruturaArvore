@@ -10,8 +10,8 @@ Todas as estruturas de dados e algoritmos foram implementados do zero, sem o uso
 
 1.  **Estruturas de Dados:**
     *   **Vetor:** Implementa operações de inserção e busca.
-    *   **Árvore Binária de Busca (ABB):** Implementa operações de inserção e busca.
-    *   **Árvore AVL:** Uma árvore binária de busca auto-balanceada, com operações de inserção (incluindo as rotações para balanceamento) e busca.
+    *   **Árvore Binária de Busca (ABB):** Implementa operações de inserção e busca, e agora também métodos para percursos (in-ordem, pré-ordem, pós-ordem).
+    *   **Árvore AVL:** Uma árvore binária de busca auto-balanceada, com operações de inserção (incluindo as rotações para balanceamento) e busca, e agora também métodos para percursos (in-ordem, pré-ordem, pós-ordem).
 
 2.  **Algoritmos de Ordenação para Vetores:**
     *   **Bubble Sort:** Um algoritmo de ordenação simples.
@@ -40,7 +40,7 @@ A análise de desempenho segue uma metodologia rigorosa para garantir resultados
 4.  **Medição do Tempo de Ordenação (Apenas para Vetores):**
     *   Para os vetores populados, os algoritmos Bubble Sort, Insertion Sort, Merge Sort e Quick Sort são aplicados, e o tempo que cada um leva para ordenar os vetores é medido e registrado.
 
-**Importante:** Cada teste (inserção, busca e ordenação) é executado no mínimo 5 vezes. O tempo registrado para análise é a média dessas 5 execuções para garantir maior precisão.
+**Importante:** Cada teste (inserção, busca e ordenação) é executado no mínimo 5 vezes. O tempo registrado para análise é a média dessas 5 execuções para garantir maior precisão. Além disso, para os percursos em árvores, eles são exibidos apenas para conjuntos de dados de 100 elementos para evitar poluir a saída do console.
 
 ## Estrutura de Arquivos e Pastas
 
@@ -65,13 +65,14 @@ O projeto está organizado da seguinte forma:
 ### Descrição Detalhada dos Arquivos:
 
 *   `src/main/java/com/trabalho/`: Contém todos os arquivos-fonte Java do projeto.
-    *   `ArvoreAVL.java`: Implementa a lógica de uma Árvore AVL, incluindo os métodos para calcular altura, balanceamento, e as rotações (simples à direita, simples à esquerda, dupla à direita e dupla à esquerda) necessárias para manter a árvore balanceada durante as inserções. Também possui o método de busca.
-    *   `ArvoreBinariaBusca.java`: Implementa uma Árvore Binária de Busca padrão, com métodos recursivos para inserção de novos valores e busca de valores existentes.
+    *   `ArvoreAVL.java`: Implementa a lógica de uma Árvore AVL, incluindo os métodos para calcular altura, balanceamento, e as rotações (simples à direita, simples à esquerda, dupla à direita e dupla à esquerda) necessárias para manter a árvore balanceada durante as inserções. Também possui o método de busca e métodos para percursos (imprimirEmOrdem, imprimirPreOrdem, imprimirPosOrdem).
+    *   `ArvoreBinariaBusca.java`: Implementa uma Árvore Binária de Busca padrão, com métodos recursivos para inserção de novos valores e busca de valores existentes. Agora também inclui métodos para percursos (imprimirEmOrdem, imprimirPreOrdem, imprimirPosOrdem).
     *   `Main.java`: A classe principal do projeto. É responsável por:
         *   Definir os tamanhos dos conjuntos de dados (100, 1000, 10000) e as ordens de inserção (Ordenada, Inversamente Ordenada, Aleatória).
         *   Gerar os dados para cada cenário.
         *   Instanciar e testar cada estrutura de dados (Vetor, ABB, AVL).
         *   Medir os tempos de inserção, busca e ordenação (para Vetores, incluindo Bubble Sort, Insertion Sort, Merge Sort e Quick Sort).
+        *   Executar os métodos de percurso para ABB e AVL em conjuntos de dados de 100 elementos.
         *   Executar cada teste múltiplas vezes (5 vezes) e calcular a média dos tempos.
         *   Imprimir os resultados formatados no console.
     *   `No.java`: Uma classe auxiliar que define a estrutura de um nó para as árvores (ABB e AVL). Cada nó contém um `valor` inteiro, referências para os nós `esquerda` e `direita`, e um atributo `altura` (usado especificamente pela Árvore AVL para cálculo de balanceamento).
@@ -107,4 +108,4 @@ Para compilar e executar este projeto, siga os passos abaixo:
     "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main
     ```
 
-Após a execução, você verá os tempos médios de inserção, busca e ordenação para cada estrutura de dados, tamanho de conjunto e ordem de inserção, permitindo a análise e a criação do relatório técnico.
+Após a execução, você verá os tempos médios de inserção, busca e ordenação para cada estrutura de dados, tamanho de conjunto e ordem de inserção, além dos percursos das árvores para conjuntos de 100 elementos, permitindo a análise e a criação do relatório técnico.

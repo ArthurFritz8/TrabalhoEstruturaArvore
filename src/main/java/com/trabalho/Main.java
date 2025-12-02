@@ -167,6 +167,16 @@ public class Main {
         }
         System.out.printf("Tempo medio de insercao (ABB): %.3f ms%n", (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de busca (ABB): %.3f ms%n", (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0);
+        
+        if (tamanho == 100) { // Apenas para tamanhos pequenos para não poluir a saída
+            ArvoreBinariaBusca abbParaPercurso = new ArvoreBinariaBusca();
+            for (int dado : dados) {
+                abbParaPercurso.inserir(dado);
+            }
+            abbParaPercurso.imprimirEmOrdem();
+            abbParaPercurso.imprimirPreOrdem();
+            abbParaPercurso.imprimirPosOrdem();
+        }
     }
 
     private static void testarArvoreAVL(int tamanho, List<Integer> dados) {
@@ -197,6 +207,16 @@ public class Main {
         }
         System.out.printf("Tempo medio de insercao (AVL): %.3f ms%n", (double) tempoInsercaoTotal / NUM_EXECUCOES / 1_000_000.0);
         System.out.printf("Tempo medio de busca (AVL): %.3f ms%n", (double) tempoBuscaTotal / NUM_EXECUCOES / 1_000_000.0);
+
+        if (tamanho == 100) { // Apenas para tamanhos pequenos para não poluir a saída
+            ArvoreAVL avlParaPercurso = new ArvoreAVL();
+            for (int dado : dados) {
+                avlParaPercurso.inserir(dado);
+            }
+            avlParaPercurso.imprimirEmOrdem();
+            avlParaPercurso.imprimirPreOrdem();
+            avlParaPercurso.imprimirPosOrdem();
+        }
     }
 }
 

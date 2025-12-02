@@ -37,4 +37,46 @@ public class ArvoreBinariaBusca {
         }
         return valor < atual.valor ? buscarRecursivo(atual.esquerda, valor) : buscarRecursivo(atual.direita, valor);
     }
+
+    public void imprimirEmOrdem() {
+        System.out.print("In-Ordem: ");
+        imprimirEmOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirEmOrdemRecursivo(No no) {
+        if (no != null) {
+            imprimirEmOrdemRecursivo(no.esquerda);
+            System.out.print(no.valor + " ");
+            imprimirEmOrdemRecursivo(no.direita);
+        }
+    }
+
+    public void imprimirPreOrdem() {
+        System.out.print("Pré-Ordem: ");
+        imprimirPreOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirPreOrdemRecursivo(No no) {
+        if (no != null) {
+            System.out.print(no.valor + " ");
+            imprimirPreOrdemRecursivo(no.esquerda);
+            imprimirPreOrdemRecursivo(no.direita);
+        }
+    }
+
+    public void imprimirPosOrdem() {
+        System.out.print("Pós-Ordem: ");
+        imprimirPosOrdemRecursivo(raiz);
+        System.out.println();
+    }
+
+    private void imprimirPosOrdemRecursivo(No no) {
+        if (no != null) {
+            imprimirPosOrdemRecursivo(no.esquerda);
+            imprimirPosOrdemRecursivo(no.direita);
+            System.out.print(no.valor + " ");
+        }
+    }
 }
