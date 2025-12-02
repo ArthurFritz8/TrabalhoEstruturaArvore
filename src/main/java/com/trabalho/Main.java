@@ -176,6 +176,13 @@ public class Main {
             abbParaPercurso.imprimirEmOrdem();
             abbParaPercurso.imprimirPreOrdem();
             abbParaPercurso.imprimirPosOrdem();
+
+            System.out.println("Testando remocao (ABB):");
+            int valorParaRemover = dados.get(tamanho / 2); // Remover o elemento do meio
+            System.out.println("Removendo " + valorParaRemover + " da ABB...");
+            abbParaPercurso.remover(valorParaRemover);
+            System.out.println("Busca por " + valorParaRemover + " apos remocao: " + abbParaPercurso.buscar(valorParaRemover));
+            abbParaPercurso.imprimirEmOrdem();
         }
     }
 
@@ -216,6 +223,13 @@ public class Main {
             avlParaPercurso.imprimirEmOrdem();
             avlParaPercurso.imprimirPreOrdem();
             avlParaPercurso.imprimirPosOrdem();
+
+            System.out.println("Testando remocao (AVL):");
+            int valorParaRemover = dados.get(tamanho / 2); // Remover o elemento do meio
+            System.out.println("Removendo " + valorParaRemover + " da AVL...");
+            avlParaPercurso.remover(valorParaRemover);
+            System.out.println("Busca por " + valorParaRemover + " apos remocao: " + avlParaPercurso.buscar(valorParaRemover));
+            avlParaPercurso.imprimirEmOrdem();
         }
     }
 }

@@ -152,4 +152,83 @@ public class ArvoreAVL {
             System.out.print(no.valor + " ");
         }
     }
+
+    public void remover(int valor) {
+        raiz = remover(raiz, valor);
+    }
+
+    private No remover(No no, int valor) {
+        if (no == null) {
+            return no;
+        }
+
+        if (valor < no.valor) {
+            no.esquerda = remover(no.esquerda, valor);
+        } else if (valor > no.valor) {
+            no.direita = remover(no.direita, valor);
+        } else {
+            // Nó com no máximo um filho
+            if ((no.esquerda == null) || (no.direita == null)) {
+                No temp = null;
+                if (temp == no.esquerda) {
+                    temp = no.direita;
+                } else {
+                    temp = no.esquerda;
+                }
+
+                // Sem filho
+                if (temp == null) {
+                    no = null;
+                } else { // Um filho
+                    no = temp;
+                }
+            } else {
+                // Nó com dois filhos: Obtém o sucessor in-ordem (menor na subárvore direita)
+                No temp = encontrarMenorValorNo(no.direita);
+                no.valor = temp.valor;
+                no.direita = remover(no.direita, temp.valor);
+            }
+        }
+
+        if (no == null) {
+            return no;
+        }
+
+        no.altura = max(altura(no.esquerda), altura(no.direita)) + 1;
+
+        int balanceamento = getBalanceamento(no);
+
+        // Casos de desbalanceamento e rotações
+        // Rotação à direita simples
+        if (balanceamento > 1 && getBalanceamento(no.esquerda) >= 0) {
+            return rotacaoDireita(no);
+        }
+
+        // Rotação à esquerda-direita
+        if (balanceamento > 1 && getBalanceamento(no.esquerda) < 0) {
+            no.esquerda = rotacaoEsquerda(no.esquerda);
+            return rotacaoDireita(no);
+        }
+
+        // Rotação à esquerda simples
+        if (balanceamento < -1 && getBalanceamento(no.direita) <= 0) {
+            return rotacaoEsquerda(no);
+        }
+
+        // Rotação à direita-esquerda
+        if (balanceamento < -1 && getBalanceamento(no.direita) > 0) {
+            no.direita = rotacaoDireita(no.direita);
+            return rotacaoEsquerda(no);
+        }
+
+        return no;
+    }
+
+    private No encontrarMenorValorNo(No no) {
+        No atual = no;
+        while (atual.esquerda != null) {
+            atual = atual.esquerda;
+        }
+        return atual;
+    }
 }

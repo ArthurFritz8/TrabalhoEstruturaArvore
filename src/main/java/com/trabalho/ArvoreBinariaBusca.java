@@ -79,4 +79,43 @@ public class ArvoreBinariaBusca {
             System.out.print(no.valor + " ");
         }
     }
+
+    public void remover(int valor) {
+        raiz = removerRecursivo(raiz, valor);
+    }
+
+    private No removerRecursivo(No atual, int valor) {
+        if (atual == null) {
+            return null;
+        }
+
+        if (valor == atual.valor) {
+            // Caso 1: Nó folha
+            if (atual.esquerda == null && atual.direita == null) {
+                return null;
+            }
+            // Caso 2: Nó com apenas um filho
+            if (atual.direita == null) {
+                return atual.esquerda;
+            }
+            if (atual.esquerda == null) {
+                return atual.direita;
+            }
+            // Caso 3: Nó com dois filhos
+            int menorValor = encontrarMenorValor(atual.direita);
+            atual.valor = menorValor;
+            atual.direita = removerRecursivo(atual.direita, menorValor);
+            return atual;
+        }
+        if (valor < atual.valor) {
+            atual.esquerda = removerRecursivo(atual.esquerda, valor);
+            return atual;
+        }
+        atual.direita = removerRecursivo(atual.direita, valor);
+        return atual;
+    }
+
+    private int encontrarMenorValor(No raiz) {
+        return raiz.esquerda == null ? raiz.valor : encontrarMenorValor(raiz.esquerda);
+    }
 }
