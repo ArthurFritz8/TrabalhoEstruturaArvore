@@ -100,8 +100,13 @@ Para compilar e executar este projeto, siga os passos abaixo:
 3.  **Compile os arquivos Java** usando o `javac`. Este comando criará um diretório `out` e colocará os arquivos `.class` compilados lá:
 
     ```bash
-    "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java src/test/java/com/trabalho/*.java -d out ou java -cp out com.trabalho.Main
+    "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java src/test/java/com/trabalho/*.java -d out
     ```
+        ou
+
+ ```bash
+     java -cp out com.trabalho.Main
+```
 
 4.  **Execute a aplicação de análise de desempenho** usando o `java`. O comando irá rodar a classe `Main`, que iniciará a análise de desempenho e exibirá os resultados detalhados no terminal. Além disso, um arquivo `resultados_desempenho.csv` será gerado na raiz do projeto com todos os dados coletados:
 
