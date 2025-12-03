@@ -1,100 +1,100 @@
 Estrutura,Tamanho,Ordem,Operacao,TempoMedio_ms
-Vetor,100,Ordenada,Insercao,0,020
-Vetor,100,Ordenada,Busca Sequencial,0,076
-Vetor,100,Ordenada,Busca Binaria,0,009
-Vetor,100,Ordenada,Bubble Sort,0,303
-Vetor,100,Ordenada,Insertion Sort,0,004
-Vetor,100,Ordenada,Merge Sort,0,024
-Vetor,100,Ordenada,Quick Sort,0,090
-Arvore Binaria de Busca,100,Ordenada,Insercao,0,222
-Arvore Binaria de Busca,100,Ordenada,Busca,0,018
-Arvore AVL,100,Ordenada,Insercao,0,156
-Arvore AVL,100,Ordenada,Busca,0,016
+Vetor,100,Ordenada,Insercao,0,013
+Vetor,100,Ordenada,Busca Sequencial,0,051
+Vetor,100,Ordenada,Busca Binaria,0,004
+Vetor,100,Ordenada,Bubble Sort,0,187
+Vetor,100,Ordenada,Insertion Sort,0,003
+Vetor,100,Ordenada,Merge Sort,0,012
+Vetor,100,Ordenada,Quick Sort,0,065
+Arvore Binaria de Busca,100,Ordenada,Insercao,0,161
+Arvore Binaria de Busca,100,Ordenada,Busca,0,016
+Arvore AVL,100,Ordenada,Insercao,0,102
+Arvore AVL,100,Ordenada,Busca,0,009
 Vetor,100,Inversamente Ordenada,Insercao,0,012
-Vetor,100,Inversamente Ordenada,Busca Sequencial,0,011
+Vetor,100,Inversamente Ordenada,Busca Sequencial,0,012
 Vetor,100,Inversamente Ordenada,Busca Binaria,0,007
-Vetor,100,Inversamente Ordenada,Bubble Sort,0,190
-Vetor,100,Inversamente Ordenada,Insertion Sort,0,109
-Vetor,100,Inversamente Ordenada,Merge Sort,0,007
-Vetor,100,Inversamente Ordenada,Quick Sort,0,021
-Arvore Binaria de Busca,100,Inversamente Ordenada,Insercao,0,071
-Arvore Binaria de Busca,100,Inversamente Ordenada,Busca,0,005
-Arvore AVL,100,Inversamente Ordenada,Insercao,0,069
-Arvore AVL,100,Inversamente Ordenada,Busca,0,016
-Vetor,100,Aleatoria,Insercao,0,012
+Vetor,100,Inversamente Ordenada,Bubble Sort,0,209
+Vetor,100,Inversamente Ordenada,Insertion Sort,0,127
+Vetor,100,Inversamente Ordenada,Merge Sort,0,009
+Vetor,100,Inversamente Ordenada,Quick Sort,0,026
+Arvore Binaria de Busca,100,Inversamente Ordenada,Insercao,0,106
+Arvore Binaria de Busca,100,Inversamente Ordenada,Busca,0,009
+Arvore AVL,100,Inversamente Ordenada,Insercao,0,045
+Arvore AVL,100,Inversamente Ordenada,Busca,0,009
+Vetor,100,Aleatoria,Insercao,0,010
 Vetor,100,Aleatoria,Busca Sequencial,0,012
 Vetor,100,Aleatoria,Busca Binaria,0,007
-Vetor,100,Aleatoria,Bubble Sort,0,096
-Vetor,100,Aleatoria,Insertion Sort,0,065
-Vetor,100,Aleatoria,Merge Sort,0,059
+Vetor,100,Aleatoria,Bubble Sort,0,094
+Vetor,100,Aleatoria,Insertion Sort,0,068
+Vetor,100,Aleatoria,Merge Sort,0,052
 Vetor,100,Aleatoria,Quick Sort,0,009
-Arvore Binaria de Busca,100,Aleatoria,Insercao,0,020
-Arvore Binaria de Busca,100,Aleatoria,Busca,0,011
-Arvore AVL,100,Aleatoria,Insercao,0,092
-Arvore AVL,100,Aleatoria,Busca,0,005
-Vetor,1000,Ordenada,Insercao,0,076
-Vetor,1000,Ordenada,Busca Sequencial,0,038
-Vetor,1000,Ordenada,Busca Binaria,0,006
-Vetor,1000,Ordenada,Bubble Sort,0,747
-Vetor,1000,Ordenada,Insertion Sort,0,024
-Vetor,1000,Ordenada,Merge Sort,0,030
-Vetor,1000,Ordenada,Quick Sort,0,507
-Arvore Binaria de Busca,1000,Ordenada,Insercao,1,584
-Arvore Binaria de Busca,1000,Ordenada,Busca,0,045
-Arvore AVL,1000,Ordenada,Insercao,0,276
-Arvore AVL,1000,Ordenada,Busca,0,004
-Vetor,1000,Inversamente Ordenada,Insercao,0,078
-Vetor,1000,Inversamente Ordenada,Busca Sequencial,0,018
-Vetor,1000,Inversamente Ordenada,Busca Binaria,0,007
-Vetor,1000,Inversamente Ordenada,Bubble Sort,0,351
-Vetor,1000,Inversamente Ordenada,Insertion Sort,1,229
-Vetor,1000,Inversamente Ordenada,Merge Sort,0,048
-Vetor,1000,Inversamente Ordenada,Quick Sort,0,451
-Arvore Binaria de Busca,1000,Inversamente Ordenada,Insercao,1,480
-Arvore Binaria de Busca,1000,Inversamente Ordenada,Busca,0,017
-Arvore AVL,1000,Inversamente Ordenada,Insercao,0,169
-Arvore AVL,1000,Inversamente Ordenada,Busca,0,003
-Vetor,1000,Aleatoria,Insercao,0,054
-Vetor,1000,Aleatoria,Busca Sequencial,0,037
-Vetor,1000,Aleatoria,Busca Binaria,0,020
-Vetor,1000,Aleatoria,Bubble Sort,0,567
-Vetor,1000,Aleatoria,Insertion Sort,1,246
-Vetor,1000,Aleatoria,Merge Sort,0,059
-Vetor,1000,Aleatoria,Quick Sort,0,046
-Arvore Binaria de Busca,1000,Aleatoria,Insercao,0,179
-Arvore Binaria de Busca,1000,Aleatoria,Busca,0,007
-Arvore AVL,1000,Aleatoria,Insercao,0,184
+Arvore Binaria de Busca,100,Aleatoria,Insercao,0,015
+Arvore Binaria de Busca,100,Aleatoria,Busca,0,006
+Arvore AVL,100,Aleatoria,Insercao,0,119
+Arvore AVL,100,Aleatoria,Busca,0,008
+Vetor,1000,Ordenada,Insercao,0,070
+Vetor,1000,Ordenada,Busca Sequencial,0,028
+Vetor,1000,Ordenada,Busca Binaria,0,004
+Vetor,1000,Ordenada,Bubble Sort,0,621
+Vetor,1000,Ordenada,Insertion Sort,0,025
+Vetor,1000,Ordenada,Merge Sort,0,025
+Vetor,1000,Ordenada,Quick Sort,0,442
+Arvore Binaria de Busca,1000,Ordenada,Insercao,1,657
+Arvore Binaria de Busca,1000,Ordenada,Busca,0,032
+Arvore AVL,1000,Ordenada,Insercao,0,359
+Arvore AVL,1000,Ordenada,Busca,0,006
+Vetor,1000,Inversamente Ordenada,Insercao,0,080
+Vetor,1000,Inversamente Ordenada,Busca Sequencial,0,022
+Vetor,1000,Inversamente Ordenada,Busca Binaria,0,008
+Vetor,1000,Inversamente Ordenada,Bubble Sort,0,598
+Vetor,1000,Inversamente Ordenada,Insertion Sort,1,482
+Vetor,1000,Inversamente Ordenada,Merge Sort,0,050
+Vetor,1000,Inversamente Ordenada,Quick Sort,0,474
+Arvore Binaria de Busca,1000,Inversamente Ordenada,Insercao,1,610
+Arvore Binaria de Busca,1000,Inversamente Ordenada,Busca,0,026
+Arvore AVL,1000,Inversamente Ordenada,Insercao,0,228
+Arvore AVL,1000,Inversamente Ordenada,Busca,0,007
+Vetor,1000,Aleatoria,Insercao,0,061
+Vetor,1000,Aleatoria,Busca Sequencial,0,019
+Vetor,1000,Aleatoria,Busca Binaria,0,019
+Vetor,1000,Aleatoria,Bubble Sort,0,497
+Vetor,1000,Aleatoria,Insertion Sort,1,126
+Vetor,1000,Aleatoria,Merge Sort,0,065
+Vetor,1000,Aleatoria,Quick Sort,0,043
+Arvore Binaria de Busca,1000,Aleatoria,Insercao,0,105
+Arvore Binaria de Busca,1000,Aleatoria,Busca,0,004
+Arvore AVL,1000,Aleatoria,Insercao,0,168
 Arvore AVL,1000,Aleatoria,Busca,0,003
-Vetor,10000,Ordenada,Insercao,0,617
+Vetor,10000,Ordenada,Insercao,0,471
 Vetor,10000,Ordenada,Busca Sequencial,0,067
-Vetor,10000,Ordenada,Busca Binaria,0,013
-Vetor,10000,Ordenada,Bubble Sort,12,571
-Vetor,10000,Ordenada,Insertion Sort,0,013
-Vetor,10000,Ordenada,Merge Sort,0,291
-Vetor,10000,Ordenada,Quick Sort,53,377
-Arvore Binaria de Busca,10000,Ordenada,Insercao,174,519
-Arvore Binaria de Busca,10000,Ordenada,Busca,0,153
-Arvore AVL,10000,Ordenada,Insercao,1,586
+Vetor,10000,Ordenada,Busca Binaria,0,010
+Vetor,10000,Ordenada,Bubble Sort,12,043
+Vetor,10000,Ordenada,Insertion Sort,0,017
+Vetor,10000,Ordenada,Merge Sort,0,349
+Vetor,10000,Ordenada,Quick Sort,40,336
+Arvore Binaria de Busca,10000,Ordenada,Insercao,143,116
+Arvore Binaria de Busca,10000,Ordenada,Busca,0,128
+Arvore AVL,10000,Ordenada,Insercao,1,573
 Arvore AVL,10000,Ordenada,Busca,0,011
-Vetor,10000,Inversamente Ordenada,Insercao,0,056
-Vetor,10000,Inversamente Ordenada,Busca Sequencial,0,025
+Vetor,10000,Inversamente Ordenada,Insercao,0,041
+Vetor,10000,Inversamente Ordenada,Busca Sequencial,0,017
 Vetor,10000,Inversamente Ordenada,Busca Binaria,0,003
-Vetor,10000,Inversamente Ordenada,Bubble Sort,41,648
-Vetor,10000,Inversamente Ordenada,Insertion Sort,12,066
-Vetor,10000,Inversamente Ordenada,Merge Sort,0,463
-Vetor,10000,Inversamente Ordenada,Quick Sort,35,764
-Arvore Binaria de Busca,10000,Inversamente Ordenada,Insercao,171,588
-Arvore Binaria de Busca,10000,Inversamente Ordenada,Busca,0,176
-Arvore AVL,10000,Inversamente Ordenada,Insercao,1,697
-Arvore AVL,10000,Inversamente Ordenada,Busca,0,025
-Vetor,10000,Aleatoria,Insercao,0,125
-Vetor,10000,Aleatoria,Busca Sequencial,0,010
+Vetor,10000,Inversamente Ordenada,Bubble Sort,28,506
+Vetor,10000,Inversamente Ordenada,Insertion Sort,11,239
+Vetor,10000,Inversamente Ordenada,Merge Sort,0,346
+Vetor,10000,Inversamente Ordenada,Quick Sort,30,274
+Arvore Binaria de Busca,10000,Inversamente Ordenada,Insercao,140,112
+Arvore Binaria de Busca,10000,Inversamente Ordenada,Busca,0,120
+Arvore AVL,10000,Inversamente Ordenada,Insercao,1,395
+Arvore AVL,10000,Inversamente Ordenada,Busca,0,048
+Vetor,10000,Aleatoria,Insercao,0,101
+Vetor,10000,Aleatoria,Busca Sequencial,0,012
 Vetor,10000,Aleatoria,Busca Binaria,0,001
-Vetor,10000,Aleatoria,Bubble Sort,41,191
-Vetor,10000,Aleatoria,Insertion Sort,5,617
-Vetor,10000,Aleatoria,Merge Sort,0,793
-Vetor,10000,Aleatoria,Quick Sort,0,502
-Arvore Binaria de Busca,10000,Aleatoria,Insercao,0,905
-Arvore Binaria de Busca,10000,Aleatoria,Busca,0,008
-Arvore AVL,10000,Aleatoria,Insercao,1,551
-Arvore AVL,10000,Aleatoria,Busca,0,010
+Vetor,10000,Aleatoria,Bubble Sort,36,492
+Vetor,10000,Aleatoria,Insertion Sort,5,156
+Vetor,10000,Aleatoria,Merge Sort,0,750
+Vetor,10000,Aleatoria,Quick Sort,0,479
+Arvore Binaria de Busca,10000,Aleatoria,Insercao,0,860
+Arvore Binaria de Busca,10000,Aleatoria,Busca,0,005
+Arvore AVL,10000,Aleatoria,Insercao,1,510
+Arvore AVL,10000,Aleatoria,Busca,0,007

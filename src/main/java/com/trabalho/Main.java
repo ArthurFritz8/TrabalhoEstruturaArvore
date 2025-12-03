@@ -286,3 +286,6 @@ public class Main {
         }
     }
 }
+
+
+// Iniciar projeto : java -cp out com.trabalho.Main  || "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main

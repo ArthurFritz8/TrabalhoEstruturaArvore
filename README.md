@@ -97,13 +97,13 @@ Para compilar e executar este projeto, siga os passos abaixo:
 
 2.  **Abra o terminal** na raiz do diretório do projeto (onde o arquivo `README.md` está localizado).
 
-3.  **Compile os arquivos Java** usando o `javac`. Este comando criará um diretório `out` e colocará os arquivos `.class` compilados lá. Certifique-se de usar o caminho completo para o `javac.exe` da sua instalação do JDK 21:
+3.  **Compile os arquivos Java** usando o `javac`. Este comando criará um diretório `out` e colocará os arquivos `.class` compilados lá:
 
     ```bash
-    "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java -d out
+    "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\javac.exe" src/main/java/com/trabalho/*.java src/test/java/com/trabalho/*.java -d out ou java -cp out com.trabalho.Main
     ```
 
-4.  **Execute a aplicação** usando o `java`. O comando irá rodar a classe `Main`, que iniciará a análise de desempenho e exibirá os resultados detalhados no terminal. Além disso, um arquivo `resultados_desempenho.csv` será gerado na raiz do projeto com todos os dados coletados. Certifique-se de usar o caminho completo para o `java.exe` da sua instalação do JDK 21:
+4.  **Execute a aplicação de análise de desempenho** usando o `java`. O comando irá rodar a classe `Main`, que iniciará a análise de desempenho e exibirá os resultados detalhados no terminal. Além disso, um arquivo `resultados_desempenho.csv` será gerado na raiz do projeto com todos os dados coletados:
 
     ```bash
     "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe" -cp out com.trabalho.Main
